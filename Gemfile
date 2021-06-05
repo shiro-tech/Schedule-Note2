@@ -25,11 +25,11 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+# gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
-
+gem 'bcrypt'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
 
@@ -46,7 +46,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-doc'
   gem 'pry-byebug'
-  gem 'pry-stack_wxplorer'
+  # gem 'pry-stack_wxplorer'
 end
 
 group :development do
