@@ -1,4 +1,4 @@
-class CalenderController < ApplicationController
+class TopicCommentsController < ApplicationController
   def index
   end
   def new
