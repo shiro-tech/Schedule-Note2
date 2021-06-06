@@ -1,7 +1,4 @@
 class ApplicationController < ActionController::Base
-  def new
-  end
-  def create
-  end
-  
+  # add_flash_types :success, :info, :warning, :danger
+
 end

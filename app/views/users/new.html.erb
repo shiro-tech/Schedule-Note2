@@ -1,2 +1,47 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<div class="user-new">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-4 col-md-4 users-new-container">
+        <h1 class="text-center">ユーザ登録</h1>
+        <%= form_for @user do |f| %>
+          <div class="form-group">
+            <%= f.label :name, class: 'text-white' %>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :email, class: 'text-white' %>
+            <%= f.text_field :email, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password, class: 'text-white' %>
+            <%= f.password_field :password, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password_confirmation, class: 'text_white' %>
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :company, class: 'text-white' %>
+            <%= f.text_field :company, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :cellphone, class: 'text-white' %>
+            <%= f.text_field :cellphone, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :admin, class: 'text-white' %>
+            <%= f.check_box :admin, class: 'form-control' %>
+          </div>
+
+          <%= f.submit '登録する', class: 'btn-block btn-white' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
