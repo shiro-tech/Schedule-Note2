@@ -1,2 +1,17 @@
-<h1>Top#index</h1>
-<p>Find me in app/views/top/index.html.erb</p>
+<div class="top-wrapper text-center">
+  <div class="conteriner top-container">
+
+      <h1 class="top-text">Schedule-Note</h1>
+      <h2 class="top-text">Login?/Sign in</h2>
+
+      <div class="row">
+        <div class="col-md-offset-3 col-md-3">
+          <%= link_to 'Sign up', users_new_path , class: 'btn btn-block' %>
+        </div>
+
+        <div class="col-md-3">
+          <%= link_to 'Log in', "#", class:'btn btn-block' %>
+        </div>
+      </div>
+  </div>
+</div>
