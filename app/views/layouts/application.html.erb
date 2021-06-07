@@ -10,11 +10,11 @@
   </head>
 
   <body>
-    <%# <div class="alert alert-<%= key %>" role="alert"><%= value %></div> %>
+    <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
     <%= yield %>
-    <!-- <script>
+    <script>
       $(function(){
         $(".alert").fadeOut(5000);
-      }); -->
+      });
   </body>
 </html>
