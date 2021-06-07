@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'top/index'
-  get 'users/new'
   get 'projects/new'
   get 'projects/index'
   get 'progresses/new'
