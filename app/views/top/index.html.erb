@@ -2,7 +2,7 @@
   <div class="conteriner top-container">
 
       <h1 class="top-text">Schedule-Note2</h1>
-      <h2 class="top-text">Login?/Sign in</h2>
+      <h2 class="top-text">Log in?/Sign in</h2>
 
       <div class="row">
         <div class="col-md-offset-3 col-md-3">
@@ -10,7 +10,19 @@
         </div>
 
         <div class="col-md-3">
-          <%= link_to 'Log in', "#", class:'btn btn-block' %>
+          <%= link_to 'Log in', sessions_new_path, class:'btn btn-block' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <%= link_to 'project',projects_index_path %>
+        </div>
+        <div class="col-md-3">
+          <%= link_to 'calender',calender_index_path %>
+        </div>
+        <div class="col-md-3">
+          <%= link_to 'notification',notification_index_path %>
         </div>
       </div>
   </div>
