@@ -22,15 +22,15 @@
           <span><%= image_tag "comment.png", class:"navbar-brand" %></span>
         <% end %>
         <% if logged_in? %>
-        
-        <% else %>
           <ul class="nav navbar-nav navbar-right">
             <li>
               <%= link_to projects_show_path do %>
                 <%= "pro" %>
-              <% end %>
+                <% end %>
             </li>
           </ul>
+        <% else %>
+
         <% end %>
       </div>
     </nav>
