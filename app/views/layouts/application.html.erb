@@ -21,13 +21,17 @@
         <%= link_to root_path do %>
           <span><%= image_tag "comment.png", class:"navbar-brand" %></span>
         <% end %>
-        <ul class="nav navbar-nav navbar-right">
+        <% if logged_in? %>
+        
+        <% else %>
+          <ul class="nav navbar-nav navbar-right">
             <li>
               <%= link_to projects_show_path do %>
                 <%= "pro" %>
               <% end %>
             </li>
-        </ul>
+          </ul>
+        <% end %>
       </div>
     </nav>
 
