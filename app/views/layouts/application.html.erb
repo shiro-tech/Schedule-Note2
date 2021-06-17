@@ -14,6 +14,23 @@
     <% flash.each do |key,value| %>
       <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
     <% end %>
+
+    <!--ナビゲーションバー実装 -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
+      <div class="container">
+        <%= link_to root_path do %>
+          <span><%= image_tag "comment.png", class:"navbar-brand" %></span>
+        <% end %>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+              <%= link_to projects_show_path do %>
+                <%= "pro" %>
+              <% end %>
+            </li>
+        </ul>
+      </div>
+    </nav>
+
     <%= yield %>
     <script>
       $(function(){
