@@ -21,17 +21,21 @@
         <%= link_to root_path do %>
           <span><%= image_tag "comment.png", class:"navbar-brand" %></span>
         <% end %>
-        <% if logged_in? %>
-          <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right">
+          <% if logged_in? %>
+            <li>
+              <%= link_to logout_path, method: :delete do %>
+                <%= "logout" %>
+              <% end %>
+            </li>
+          <% else %>
             <li>
               <%= link_to projects_show_path do %>
                 <%= "pro" %>
-                <% end %>
+              <% end %>
             </li>
-          </ul>
-        <% else %>
-
-        <% end %>
+          <% end %>
+        </ul>
       </div>
     </nav>
 

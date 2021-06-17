@@ -13,6 +13,12 @@ class SessionsController < ApplicationController
       render :new
     end
   end
+
+#ログアウトの実行
+  def destroy
+    log_out
+    redirect_to root_url, info:'ログアウトしました'
+  end
 #paramsセキュリティ設定
   private
     def email_params
@@ -27,5 +33,10 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
     end
 
+  #ログアウト時の処理
+    def log_out
+      session.delete(:user_id)
+      @current_user = nil
+    end
 
 end
