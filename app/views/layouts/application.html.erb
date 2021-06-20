@@ -24,6 +24,9 @@
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
             <li>
+              <%= link_to 'projects-new', projects_new_path %>
+            </li>
+            <li>
               <%= link_to logout_path, method: :delete do %>
                 <%= "logout" %>
               <% end %>

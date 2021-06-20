@@ -1,0 +1,22 @@
+project#new
+
+<div class="container">
+  <div class="row">
+    <div class="project-new-container">
+      <h1 class="col-md-offset-3 col-md-3">案件登録画面</h1>
+      <%= form_for :projects, url: projects_path do |f| %>
+        <div class="form-group">
+          <%= f.label :title, class: 'text-white' %>
+          <%= f.text_field :title, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :workperiod, class: 'text-white' %>
+          <%= f.text_field :workperiod, class: 'form-control' %>
+        </div>
+
+        <%= f.submit "登録する", class: 'btn-block btn-white'%>
+      <% end %>
+    </div>
+  </div>
+</div>

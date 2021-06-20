@@ -1,10 +1,17 @@
 class ProjectsController < ApplicationController
-  def index
+  def index #一覧画面
   end
-  def show
+  def show #詳細画面
   end
   def new
   end
   def create
+    @project = Project.new
+    if @project.save
+      redirect_to projects_index_path, success: '登録が成功しました'
+    else
+      flash.now[:danger] = "登録が失敗しました"
+      render :new
+    end
   end
 end

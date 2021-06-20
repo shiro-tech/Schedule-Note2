@@ -7,10 +7,13 @@
       <% if logged_in? %>
         <div class="row">
           <div class="col-md-3">
-            <%= link_to 'project',projects_index_path %>
+            <%= link_to 'projects-new', projects_new_path %>
           </div>
           <div class="col-md-3">
-            <%= link_to 'calender',calender_index_path %>
+            <%= link_to 'project-index',projects_index_path %>
+          </div>
+          <div class="col-md-3">
+            <%= link_to 'calender-index',calender_index_path %>
           </div>
           <div class="col-md-3">
             <%= link_to 'notification',notification_index_path %>
