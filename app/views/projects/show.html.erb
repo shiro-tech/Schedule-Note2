@@ -1,15 +1,15 @@
 project#show
 <div class="container">
   <div class="row">
-    <h1 class="projects_title text-center">projects.title</h1>
+    <h1 class="projects_title text-center"><%= @project.title %></h1>
 <!-- 案件の修正(やり方は要確認) -->
-<%= link_to 'new-projects', projects_new_path %>
+<%= link_to 'edit-projects', edit_project_path(id: @project.id) %>
 
 <!-- 予定入力(一部表示) -->
 <%= link_to 'index-calender', calender_index_path %>
 
 <!-- 進捗情報入力 -->
-<%= link_to 'index-progress', progresses_index_path %>
+<%= link_to 'index-progress', progresses_path %>
 
 <!-- 記事入力 -->
-<%= link_to 'index-topic', topics_index_path %>
+<%= link_to 'index-topic', topics_path %>

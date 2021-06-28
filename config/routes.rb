@@ -1,17 +1,7 @@
 Rails.application.routes.draw do
   get 'top/index'
 
-  get 'projects/new'
-  get 'projects/index'
-  get 'projects/show'
-
-  get 'progresses/new'
-  get 'progresses/index'
-
   get 'progress_comments/new'
-
-  get 'topics/new'
-  get 'topics/index'
 
   get 'topic_comments/new'
 
@@ -30,6 +20,8 @@ Rails.application.routes.draw do
 
   resources :users
   resources :projects
+  resources :topics
+  resources :progresses
 
 
 

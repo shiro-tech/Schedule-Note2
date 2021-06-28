@@ -1,1 +1,30 @@
 progress#new
+<div class="container">
+  <div class="row">
+    <div class="progress-new-container">
+      <%= form_for @progress do |f| %>
+        <div class="form-gruop">
+          <%= f.label :title, class: "text-white" %>
+          <%= f.text_field :title, class: "form_control" %>
+        </div>
+
+        <div class="form-gruop">
+          <%= f.label :file, class: "text-white" %>
+          <%= f.file_field :file %>
+        </div>
+
+        <div class="form-gruop">
+          <%= f.label :article, class: "text-white" %>
+          <%= f.text_field :article, class: "form_control" %>
+        </div>
+
+        <div class="form-gruop">
+          <%= f.label :other, class: "text-white" %>
+          <%= f.text_field :other, class: "form_control" %>
+        </div>
+
+        <%= f.submit "投稿する", class: 'btn btn-black btn-block' %>
+      <% end %>
+    </div>
+  </div>
+</div>

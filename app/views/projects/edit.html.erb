@@ -1,9 +1,9 @@
-project#new
-
+<h1>edit#project</h1>
+<%= @project.title %>
 <div class="container">
   <div class="row">
     <div class="project-new-container">
-      <h1 class="col-md-offset-3 col-md-3">案件登録画面</h1>
+      <h1 class="col-md-offset-3 col-md-3">案件編集画面</h1>
       <%= form_for @project do |f| %>
         <div class="form-group">
           <%= f.label :title, class: 'text-white' %>
@@ -15,7 +15,7 @@ project#new
           <%= f.text_field :workperiod, class: 'form-control' %>
         </div>
 
-        <%= f.submit "登録する", class: 'btn-block btn-white'%>
+        <%= f.submit "編集する", class: 'btn-block btn-white'%>
       <% end %>
     </div>
   </div>
