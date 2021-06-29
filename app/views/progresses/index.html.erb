@@ -1,4 +1,9 @@
 progress#index
 <h1 class="progress-index">進捗情報一覧</h1>
-<%= link_to 'progress-new', progresses_new_path %>
+<%= link_to 'progress-new', new_progress_path %>
 <%= link_to 'progress-comments-new', progress_comments_new_path %>
+<%= @progresses.each do |progresses| %>
+  <p>
+    <%= progresses.title %>
+  </p>
+<% end %>

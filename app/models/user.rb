@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :project_users
   has_many :projects, through: :project_users
   has_many :progresses
+  # has_many :progress_project, through: :progresses, source: 'project'
   has_many :topics
   has_many :calenders
 end

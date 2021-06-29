@@ -18,6 +18,7 @@ class ProjectsController < ApplicationController
   end
   def create
     @project = current_user.projects.new(project_params)
+    # binding.pry
     if @project.save
       redirect_to projects_path, success: '登録が成功しました'
     else

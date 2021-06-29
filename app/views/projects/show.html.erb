@@ -9,7 +9,7 @@ project#show
 <%= link_to 'index-calender', calender_index_path %>
 
 <!-- 進捗情報入力 -->
-<%= link_to 'index-progress', progresses_path %>
+<%= link_to 'index-progress', progresses_path(project_id: @project.id) %>
 
 <!-- 記事入力 -->
 <%= link_to 'index-topic', topics_path %>
