@@ -1,9 +1,10 @@
 progress#index
 <h1 class="progress-index">進捗情報一覧</h1>
-<%= link_to 'progress-new', new_progress_path %>
-<%= link_to 'progress-comments-new', progress_comments_new_path %>
-<%= @progresses.each do |progresses| %>
+<%= link_to 'progress-new', new_project_progress_path(project_id: params[:project_id]) %>
+<%= link_to 'progress-comments-new', new_progress_comment_path %>
+<% @progresses.each do |progress| %>
   <p>
-    <%= progresses.title %>
+    <%= link_to progress.title, edit_project_progress_path(project_id: params[:project_id],id: progress.id)  %>
   </p>
+
 <% end %>

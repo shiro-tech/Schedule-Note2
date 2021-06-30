@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   get 'top/index'
 
-  get 'progress_comments/new'
-
   get 'topic_comments/new'
 
   get 'sessions/new'
@@ -19,10 +17,11 @@ Rails.application.routes.draw do
   root 'top#index'
 
   resources :users
-  resources :projects
+  resources :projects do
+    resources :progresses
+  end
   resources :topics
-  resources :progresses
-
+  resources :progress_comments
 
 
 end

@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2021_06_07_064116) do
 
   create_table "progresses", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "project_id"
     t.string "title"
     t.string "file"
     t.string "article"
