@@ -19,8 +19,8 @@ Rails.application.routes.draw do
   resources :users
   resources :projects do
     resources :progresses
+    resources :topics
   end
-  resources :topics
   resources :progress_comments
 
 

@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 2021_06_07_064116) do
 
   create_table "topics", force: :cascade do |t|
     t.integer "user_id"
+    t.string "project_id"
     t.string "title"
     t.string "file"
     t.string "article"

@@ -12,4 +12,4 @@ project#show
 <%= link_to 'index-progress', project_progresses_path(project_id: @project.id) %>
 
 <!-- 記事入力 -->
-<%= link_to 'index-topic', topics_path(project: @project.id) %>
+<%= link_to 'index-topic', project_topics_path(project_id: @project.id) %>

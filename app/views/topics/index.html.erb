@@ -1,4 +1,9 @@
 topic#index
 <h1 class="topic-index">記事一覧</h1>
-<%= link_to 'topic_new', new_topic_path %>
+<%= link_to 'topic_new', new_project_topic_path(project_id: params[:project_id]) %>
+<% @topics.each do |topic| %>
+  <p>
+  <%= link_to topic.title, edit_project_topic_path(project_id: params[:project_id],id: topic.id) %>
+  </p>
+<% end %>
 <%= link_to 'topic_comments', topic_comments_new_path %>
