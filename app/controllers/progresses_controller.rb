@@ -36,6 +36,9 @@ class ProgressesController < ApplicationController
   end
 
   def destroy
+    @progress = Progress.find(params[:id])
+    @progress.destroy
+    redirect_to project_progresses_path(project_id: params[:project_id]), success:"削除に成功しました"
   end
 
   private

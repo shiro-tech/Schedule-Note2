@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   get 'top/index'
 
-  get 'topic_comments/new'
-
   get 'sessions/new'
 
   get 'calender/index'
@@ -18,10 +16,13 @@ Rails.application.routes.draw do
 
   resources :users
   resources :projects do
-    resources :progresses
-    resources :topics
+    resources :progresses do
+      resources :progress_comments
+    end
+    resources :topics do
+      resources :topic_comments
+    end
   end
-  resources :progress_comments
 
 
 end

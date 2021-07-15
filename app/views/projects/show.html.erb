@@ -13,3 +13,7 @@ project#show
 
 <!-- 記事入力 -->
 <%= link_to 'index-topic', project_topics_path(project_id: @project.id) %>
+
+<%= link_to project_path(id: @project.id), method: :delete do %>
+<button type="button" class"btn btn-white">削除</button>
+<% end %>

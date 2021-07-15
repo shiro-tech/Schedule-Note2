@@ -10,4 +10,5 @@ class User < ApplicationRecord
   # has_many :progress_project, through: :progresses, source: 'project'
   has_many :topics
   has_many :calenders
+  has_many :progress_comments
 end

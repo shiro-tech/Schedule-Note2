@@ -1,5 +1,10 @@
 topic_comments#new
-<h1 class="topic_comment_top text-center">記事投稿画面</h1>
+<h1 class="topic_comment_top text-center">コメント入力画面</h1>
 
-<%= form_for @topic_comment %>
+<%= form_for [@project,@topic,@topic_comment],url: project_topic_topic_comments_path(project_id: params[:project_id], topic_id: params[:topic_id]), method: :post do |comment| %>
+  <div class="form-group">
+    <%= comment.label :body, class:'text-white' %>
+    <%= comment.text_field :body, class:'form-control' %>
+  </div>
+  <%= comment.submit "投稿する" %>
 <% end %>

@@ -27,6 +27,12 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+    redirect_to projects_path, succcess: "案件を削除しました"
+  end
+
   private
   def project_params
     params.require(:project).permit(:workperiod, :title)

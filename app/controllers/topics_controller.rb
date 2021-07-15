@@ -34,6 +34,15 @@ class TopicsController < ApplicationController
       render :new
     end
   end
+  def destory
+    @topic = Topic.find(params[:id])
+    if @topic.destroy
+      redirect_to project_topics_path, success: '削除に成功しました'
+    else
+      flash.now[:danger] = "削除に失敗しました"
+      render :new
+    end
+  end
 
   private
   def topic_params

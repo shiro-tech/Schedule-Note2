@@ -1,10 +1,23 @@
 progress#index
 <h1 class="progress-index">進捗情報一覧</h1>
 <%= link_to 'progress-new', new_project_progress_path(project_id: params[:project_id]) %>
-<%= link_to 'progress-comments-new', new_progress_comment_path %>
 <% @progresses.each do |progress| %>
   <p>
-    <%= link_to progress.title, edit_project_progress_path(project_id: params[:project_id],id: progress.id)  %>
+    <%= progress.title%>
+    <button type="button" class:'btn btn-white'><%= link_to '編集する', edit_project_progress_path(project_id: params[:project_id],id: progress.id)  %></button>
+    <%= link_to project_progress_path(project_id: params[:project_id],id: progress.id), method: :delete do %>
+      <button type="button" class:'btn btn-white'>削除する</button>
+    <% end %>
+  </p>
+  <p>
+    <button type="button" class: 'btn btn-white' >
+      <%= link_to '返信する', new_project_progress_progress_comment_path(project_id: params[:project_id],progress_id: progress.id) %>
+    </button>
+  </p>
+  <p>
+    <% progress.progress_comments.each do |comment| %>
+      <%= comment.body %>
+    <% end %>
   </p>
 
 <% end %>

@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2021_06_07_064116) do
 
   create_table "progress_comments", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "project_id"
     t.integer "progress_id"
     t.string "body"
     t.datetime "created_at", null: false
@@ -63,8 +64,9 @@ ActiveRecord::Schema.define(version: 2021_06_07_064116) do
   end
 
   create_table "topic_comments", force: :cascade do |t|
-    t.string "user_id"
-    t.string "topic_id"
+    t.integer "user_id"
+    t.integer "topic_id"
+    t.integer "project_id"
     t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -72,7 +74,7 @@ ActiveRecord::Schema.define(version: 2021_06_07_064116) do
 
   create_table "topics", force: :cascade do |t|
     t.integer "user_id"
-    t.string "project_id"
+    t.integer "project_id"
     t.string "title"
     t.string "file"
     t.string "article"
