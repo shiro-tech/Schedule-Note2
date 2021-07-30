@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: %i[ show edit update destroy ]
+  before_action :set_event, only: %w[ show edit update destroy ]
 
   # GET /events or /events.json
   def index
@@ -8,11 +8,15 @@ class EventsController < ApplicationController
 
   # GET /events/1 or /events/1.json
   def show
+    # @event = Event.find(params[:id])
+    @project = Project.find(params[:project_id])
   end
 
   # GET /events/new
   def new
     @event = Event.new
+    @project = params[:project_id]
+    # @project = Project.find(params[:project_id])
   end
 
   # GET /events/1/edit
@@ -22,10 +26,12 @@ class EventsController < ApplicationController
   # POST /events or /events.json
   def create
     @event = Event.new(event_params)
-
+    @event.user_id = current_user.id
+    @event.project_id = params[:project_id]
+# binding.pry
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: "Event was successfully created." }
+        format.html { redirect_to project_event_path(id: @event.id), notice: "Event was successfully created." }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new, status: :unprocessable_entity }

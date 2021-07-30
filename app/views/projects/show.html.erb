@@ -7,6 +7,7 @@ project#show
 
 <!-- 予定入力(一部表示) -->
 <%= link_to 'index-calender', calender_index_path %>
+<%= link_to 'new_event', new_project_event_path(project_id: @project.id) %>
 
 <!-- 進捗情報入力 -->
 <%= link_to 'index-progress', project_progresses_path(project_id: @project.id) %>

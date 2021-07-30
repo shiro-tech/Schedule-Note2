@@ -11,4 +11,8 @@ class User < ApplicationRecord
   has_many :topics
   has_many :calenders
   has_many :progress_comments
+  has_many :topic_comments
+  has_many :events
+  has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
+  has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 end

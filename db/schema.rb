@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2021_07_15_063207) do
   end
 
   create_table "events", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "project_id"
     t.string "title"
     t.text "description"
     t.datetime "start_date"
@@ -33,7 +35,15 @@ ActiveRecord::Schema.define(version: 2021_07_15_063207) do
   end
 
   create_table "notifications", force: :cascade do |t|
-    t.string "new"
+    t.integer "visitor_id"
+    t.integer "visited_id"
+    t.integer "project_id"
+    t.integer "topic_id"
+    t.integer "topic_comment_id"
+    t.integer "progress_id"
+    t.string "progress_comment_id"
+    t.integer "event_id"
+    t.string "news"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

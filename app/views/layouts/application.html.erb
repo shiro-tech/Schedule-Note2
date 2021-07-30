@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
@@ -32,7 +33,7 @@
               <% end %>
             </li>
           <% else %>
-              <%= link_to 'ログイン', sessions_new_path %> 
+              <%= link_to 'ログイン', sessions_new_path %>
           <% end %>
         </ul>
       </div>
@@ -44,5 +45,7 @@
         $(".alert").fadeOut(5000);
       });
     </script>
+    
+
   </body>
 </html>
