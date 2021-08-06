@@ -1,4 +1,4 @@
-<%= form_with(model: [@project,event],url:project_events_path(project_id: params[:project_id],id: @event.id), local: true) do |form| %>
+<%= form_with(model: @event, local: true) do |form| %>
   <% if event.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
@@ -32,6 +32,9 @@
   </div>
 
   <div class="actions">
+    <%= form.hidden_field :project_id, value: @event.project_id %>
+    <%= form.hidden_field :user_id, value: @event.user_id %>
     <%= form.submit %>
+
   </div>
 <% end %>

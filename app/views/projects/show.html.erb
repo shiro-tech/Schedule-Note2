@@ -3,11 +3,12 @@ project#show
   <div class="row">
     <h1 class="projects_title text-center"><%= @project.title %></h1>
 <!-- 案件の修正(やり方は要確認) -->
-<%= link_to 'edit-projects', edit_project_path(id: @project.id) %>
+    <%= link_to 'edit-projects', edit_project_path(id: @project.id) %>
 
 <!-- 予定入力(一部表示) -->
-<%= link_to 'index-calender', calender_index_path %>
-<%= link_to 'new_event', new_project_event_path(project_id: @project.id) %>
+    <%= link_to 'index-event', events_path %>
+
+    <%= link_to 'new_event', new_event_path(project_id: @project.id) %>
 
 <!-- 進捗情報入力 -->
 <%= link_to 'index-progress', project_progresses_path(project_id: @project.id) %>

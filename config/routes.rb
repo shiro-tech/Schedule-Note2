@@ -20,11 +20,11 @@ Rails.application.routes.draw do
     resources :progresses do
       resources :progress_comments
     end
-    resources :events 
     resources :topics do
       resources :topic_comments
     end
   end
+  resources :events
 
 
 end

@@ -1,5 +1,5 @@
 <h1>予定の入力</h1>
 
-<%= render partial: 'form', locals: {event: @event, project: @project} %>
+<%= render partial: 'form', locals: {event: @event} %>
 
-<%= link_to 'Back', project_events_path(project_id: params[:project_id]) %>
+<%= link_to 'Back', events_path %>

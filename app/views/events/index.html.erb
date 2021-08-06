@@ -20,7 +20,7 @@
         <td><%= event.description %></td>
         <td><%= event.start_date %></td>
         <td><%= event.end_date %></td>
-        <td><%= link_to 'Show', project_event_path(project_id: params[:project_id],id: params[:id]) %></td>
+        <td><%= link_to 'Show', event_path(event) %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -30,5 +30,5 @@
 
 <br>
 <h1>カレンダー</h1>
-<%= link_to '新規入力', new_project_event_path(project_id: params[:project_id]) %>
+<%= link_to '新規入力', new_event_path %>
 <div id='calendar'></div>
