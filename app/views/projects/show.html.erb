@@ -6,7 +6,7 @@ project#show
     <%= link_to 'edit-projects', edit_project_path(id: @project.id) %>
 
 <!-- 予定入力(一部表示) -->
-    <%= link_to 'index-event', events_path %>
+    <%= link_to 'index-event', events_path(project_id: @project.id) %>
 
     <%= link_to 'new_event', new_event_path(project_id: @project.id) %>
 

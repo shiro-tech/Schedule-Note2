@@ -3,7 +3,12 @@ progress#index
 <%= link_to 'progress-new', new_project_progress_path(project_id: params[:project_id]) %>
 <% @progresses.each do |progress| %>
   <p>
-    <%= progress.title%>
+    <%= progress.title %>
+    <% if !progress.image.url == nil? %>
+      <%= image_tag progress.image.url %>
+    <% end %>
+    <%= progress.article %>
+    <%= progress.other %>
     <button type="button" class:'btn btn-white'><%= link_to '編集する', edit_project_progress_path(project_id: params[:project_id],id: progress.id)  %></button>
     <%= link_to project_progress_path(project_id: params[:project_id],id: progress.id), method: :delete do %>
       <button type="button" class:'btn btn-white'>削除する</button>
@@ -17,6 +22,13 @@ progress#index
   <p>
     <% progress.progress_comments.each do |comment| %>
       <%= comment.body %>
+      <button type="button" class:'btn btn-white'>
+        <%= link_to '編集する', edit_project_progress_progress_comment_path(project_id: params[:project_id], progress_id: progress.id, id: comment.id)  %>
+      </button>
+      <%= link_to project_progress_progress_comment_path(project_id: params[:project_id],progress_id: progress.id, id: comment.id), method: :delete do %>
+        <button type="button" class:'btn btn-white'>削除する</button>
+      <% end %>
+
     <% end %>
   </p>
 

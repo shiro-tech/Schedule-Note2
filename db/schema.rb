@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2021_07_15_063207) do
     t.integer "user_id"
     t.integer "project_id"
     t.string "title"
-    t.string "file"
+    t.string "image"
     t.string "article"
     t.string "other"
     t.datetime "created_at", null: false
@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 2021_07_15_063207) do
     t.integer "user_id"
     t.integer "project_id"
     t.string "title"
-    t.string "file"
+    t.string "image"
     t.string "article"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

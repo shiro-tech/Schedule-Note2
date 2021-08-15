@@ -1,0 +1,13 @@
+progress_comments#edit
+<div class="container">
+  <h1 class="comment-top text-center">コメント編集フォーム</h1>
+  <div class="row">
+    <%= form_for [@project,@progress,@progress_comment],url: project_progress_progress_comment_path(project_id: params[:project_id],progress_id: params[:progress_id],id: @progress_comment.id),method: :patch do |comment| %>
+      <div class="form-group">
+        <%= comment.label :body, class: 'text-white' %>
+        <%= comment.text_field :body, class: 'form-control' %>
+      </div>
+      <%= comment.submit "投稿する" %>
+    <% end %>
+  </div>
+</div>

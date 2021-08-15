@@ -4,6 +4,10 @@ topic#index
 <% @topics.each do |topic| %>
   <p>
     <%= topic.title %>
+    <% if !topic.image.url.nil? %>
+      <%= image_tag topic.image.url %>
+    <% end %>
+    <%= topic.article %>
     <button type="button" class:'btn btn-white'>
       <%= link_to '編集する', edit_project_topic_path(project_id: params[:project_id],id: topic.id) %>
     </button>
@@ -11,10 +15,15 @@ topic#index
       <button type="button" class: 'btn btn-white'>削除する</button>
     <% end %>
   </p>
-  <p>
     <%= link_to 'コメントする', new_project_topic_topic_comment_path(project_id: params[:project_id],topic_id: topic.id) %>
     <% topic.topic_comments.each do |comment| %>
-      <%= comment.body %>
+        <%= comment.body %>
+        <button type="button" class:'btn btn-white'>
+          <%= link_to '編集する', edit_project_topic_topic_comment_path(project_id: comment.project_id,topic_id: comment.topic_id, id: comment.id) %>
+        </button>
+        <%= link_to project_topic_topic_comment_path(project_id: params[:project_id], topic_id: topic.id, id: comment.id), method: :delete do %>
+          <button type="button" class: 'btn btn-white'>削除する</button>
+        <% end %>
+
     <% end %>
-  </p>
 <% end %>

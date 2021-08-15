@@ -1,6 +1,15 @@
 <h1 class="suchedule">作成したスケジュール</h1>
 <p id="notice"><%= notice %></p>
-<h2>入力したスケジュールの詳細</h2>
+<h2>イベント詳細ページ</h2>
+<p>
+<%= @event.project.title %>
+</p>
+
+<p>
+  <strong>Project NO.:</strong>
+  <%= @event.project_id %>
+</p>
+
 <p>
   <strong>Title:</strong>
   <%= @event.title %>
@@ -21,8 +30,18 @@
   <%= @event.end_date %>
 </p>
 
-<h1>カレンダー</h1>
-<%= link_to '新規入力', new_event_path %>
-<div id='calendar'></div>
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+
+<h2>案件スケジュール一覧</h2>
+  <% @event.project.events.each do |show| %>
+  <p>
+
+    <%= show.title %>
+    <%= show.description %>
+    <%= show.start_date %>
+    <%= show.end_date %>
+  </p>
+  <% end %>
+
+
+<%= link_to '編集する', edit_event_path(@event) %>|
+<%= link_to 'カレンダー画面に戻る', events_path(@events) %>

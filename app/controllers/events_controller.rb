@@ -3,13 +3,19 @@ class EventsController < ApplicationController
 
   # GET /events or /events.json
   def index
-    @events = Event.all
+    # if project_id　== nil?
+      @events = Event.all
+      # @event = Event.where(project_id: params[:project_id])
+    # end
   end
 
   # GET /events/1 or /events/1.json
   def show
-    # @event = Event.find(params[:id])
+    # @events = Event.select{
+      # @event.include?(params[:project_id])
+    # }
     # @project = Project.find(params[:project_id])
+    # binding.pry
   end
 
   # GET /events/new
@@ -28,12 +34,13 @@ class EventsController < ApplicationController
   # POST /events or /events.json
   def create
     @event = Event.new(event_params)
+    # @project = Project.find_by(project_id: [:project_id]).id
     # @event.user_id = current_user.id
     # @event.project_id = event_params[:project_id]
 # binding.pry
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: "Event was successfully created." }
+        format.html { redirect_to events_path(project_id: @event.project_id), notice: "Event was successfully created." }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -45,6 +52,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1 or /events/1.json
   def update
     respond_to do |format|
+      # binding.pry
       if @event.update(event_params)
         format.html { redirect_to @event, notice: "Event was successfully updated." }
         format.json { render :show, status: :ok, location: @event }

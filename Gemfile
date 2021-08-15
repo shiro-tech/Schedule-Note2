@@ -36,6 +36,7 @@ gem 'bootstrap-sass'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 
+gem 'carrierwave'
 gem 'device'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

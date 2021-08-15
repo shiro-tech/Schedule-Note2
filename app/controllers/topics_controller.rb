@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
   def index
     @topics = Topic.order(created_at: "ASC")
+    binding.pry
   end
   def new
     @topic = Topic.new
@@ -11,7 +12,7 @@ class TopicsController < ApplicationController
     @topic = current_user.topics.new(topic_params)
     @topic.user_id = current_user.id
     @topic.project_id = params[:project_id]
-    # binding.pry
+    binding.pry
     if @topic.save
       redirect_to project_topics_path, success: '投稿に成功しました'
     else
@@ -34,7 +35,7 @@ class TopicsController < ApplicationController
       render :new
     end
   end
-  def destory
+  def destroy
     @topic = Topic.find(params[:id])
     if @topic.destroy
       redirect_to project_topics_path, success: '削除に成功しました'
@@ -46,6 +47,6 @@ class TopicsController < ApplicationController
 
   private
   def topic_params
-    params.require(:topic).permit(:title, :file, :article)
+    params.require(:topic).permit(:title, :image, :article)
   end
 end

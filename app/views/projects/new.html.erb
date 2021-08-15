@@ -14,8 +14,10 @@ project#new
           <%= f.label :workperiod, class: 'text-white' %>
           <%= f.text_field :workperiod, class: 'form-control' %>
         </div>
-
+        <div class="submit">
+        <% f.hidden_field :user_ids, value: current_user.id %>
         <%= f.submit "登録する", class: 'btn-block btn-white'%>
+        </div>
       <% end %>
     </div>
   </div>

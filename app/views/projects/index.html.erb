@@ -6,6 +6,7 @@ project#index
       <% @projects.each do |project| %>
 
         <p>
+          <%= project.id %>
         <%= link_to project.title, project_path(id: project.id) %>
         </p>
       <% end %>

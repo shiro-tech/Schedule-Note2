@@ -1,6 +1,7 @@
 class ProgressesController < ApplicationController
   def index
     @progresses = Progress.order(created_at: "ASC")
+    # @progress_comment = ProgressComment.find(params[:id])
   end
   def new
     @project = Project.find(params[:project_id])
@@ -20,8 +21,8 @@ class ProgressesController < ApplicationController
   end
 
   def edit
-    @project = Project.find(params[:project_id])
     @progress = Progress.find(params[:id])
+    @project = Project.find(params[:project_id])
   end
 
   def update
@@ -37,12 +38,13 @@ class ProgressesController < ApplicationController
 
   def destroy
     @progress = Progress.find(params[:id])
-    @progress.destroy
-    redirect_to project_progresses_path(project_id: params[:project_id]), success:"削除に成功しました"
+    if @progress.destroy
+      redirect_to project_progresses_path(project_id: params[:project_id]), success:"削除に成功しました"
+    end
   end
 
   private
   def progress_params
-    params.require(:progress).permit(:title, :file, :article, :other)
+    params.require(:progress).permit(:title, :image, :article, :other)
   end
 end
